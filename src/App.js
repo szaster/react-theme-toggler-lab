@@ -11,14 +11,23 @@ import {
 function App() {
   const [darkMode, setDarkMode] = useState(false);
 
+  const theme = createTheme({
+    palette: {
+      type: darkMode ? "dark" : "light",
+    },
+  });
+
   return (
     <div className="App">
-      <Paper style={{ height: "100vh" }}>
-        <Switch checked={darkMode} onChange={() => setDarkMode(!darkMode)} />
-        <Typography variant="h1">
-          {darkMode ? "Dark Mode" : "Light Mode"}
-        </Typography>
-      </Paper>
+      <ThemeProvider theme={theme}>
+        <CssBaseline />
+        <Paper style={{ height: "100vh" }}>
+          <Switch checked={darkMode} onChange={() => setDarkMode(!darkMode)} />
+          <Typography variant="h1">
+            {darkMode ? "Dark Mode" : "Light Mode"}
+          </Typography>
+        </Paper>
+      </ThemeProvider>
     </div>
   );
 }
