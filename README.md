@@ -1,2 +1,1 @@
-# react-theme-toggler-lab
-The app for studying theme toggler for Password Generator
+This project is created to study theme toggler in React.
